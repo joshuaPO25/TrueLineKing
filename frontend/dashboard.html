@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrueLineKing Dashboard - Analysis & Prediction</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-left">
+                <span class="crown">👑</span>
+                <h1 class="logo">TRUELINEKING</h1>
+            </div>
+            <div class="header-right">
+                <span class="badge pro">PRO</span>
+                <span class="badge live">● LIVE</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Title Section -->
+            <section class="hero-section">
+                <p class="subtitle">BASKETBALL INTELLIGENCE PLATFORM</p>
+                <h2 class="main-title">PREDICT.<br>ANALYZE.<br>WIN.</h2>
+                <p class="hero-description">Advanced signal analysis for basketball over/under betting. Professional grade precision.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">SIGNALS</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">ODDS LINES</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">T1</div>
+                        <div class="stat-label">LEAGUES</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- League & Teams Section -->
+            <section class="card">
+                <div class="card-header">
+                    <span class="card-icon">🏆</span>
+                    <h3>LEAGUE & TEAMS</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>SELECT LEAGUE</label>
+                        <select id="leagueSelect">
+                            <option value="">-- Select League --</option>
+                            <option value="nba">NBA</option>
+                            <option value="ncaa">NCAA</option>
+                            <option value="euroleague">EuroLeague</option>
+                        </select>
+                    </div>
+
+                    <div class="teams-row">
+                        <div class="form-group">
+                            <label>HOME TEAM</label>
+                            <input type="text" id="homeTeam" placeholder="Team A">
+                        </div>
+                        <div class="form-group">
+                            <label>AWAY TEAM</label>
+                            <input type="text" id="awayTeam" placeholder="Team B">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Halftime Scores Section -->
+            <section class="card">
+                <div class="card-header">
+                    <span class="card-icon">📊</span>
+                    <h3>HALFTIME SCORES</h3>
+                </div>
+                <div class="card-body">
+                    <div class="quarters-grid">
+                        <div class="quarter">
+                            <label>HOME Q1</label>
+                            <input type="number" id="homeQ1" value="0" min="0">
+                        </div>
+                        <div class="quarter">
+                            <label>AWAY Q1</label>
+                            <input type="number" id="awayQ1" value="0" min="0">
+                        </div>
+                        <div class="quarter">
+                            <label>HOME Q2</label>
+                            <input type="number" id="homeQ2" value="0" min="0">
+                        </div>
+                        <div class="quarter">
+                            <label>AWAY Q2</label>
+                            <input type="number" id="awayQ2" value="0" min="0">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Shooting Stats Section -->
+            <section class="card">
+                <div class="card-header">
+                    <span class="card-icon">🎯</span>
+                    <h3>SHOOTING STATS <span class="optional">OPTIONAL</span></h3>
+                </div>
+                <div class="card-body">
+                    <div class="stats-header">
+                        <div></div>
+                        <div>3PT%</div>
+                        <div>2PT%</div>
+                        <div>FT%</div>
+                    </div>
+                    <div class="stat-row home">
+                        <div class="team-label">Home</div>
+                        <input type="number" id="home3pt" value="35" min="0" max="100">
+                        <input type="number" id="home2pt" value="50" min="0" max="100">
+                        <input type="number" id="homeFt" value="75" min="0" max="100">
+                    </div>
+                    <div class="stat-row away">
+                        <div class="team-label">Away</div>
+                        <input type="number" id="away3pt" value="35" min="0" max="100">
+                        <input type="number" id="away2pt" value="50" min="0" max="100">
+                        <input type="number" id="awayFt" value="75" min="0" max="100">
+                    </div>
+                    <p class="hint">💡 Season averages or live game stats boost accuracy</p>
+                </div>
+            </section>
+
+            <!-- Full Game Odds Section -->
+            <section class="card">
+                <div class="card-header">
+                    <span class="card-icon">💰</span>
+                    <h3>FULL GAME ODDS <span class="badge-info">UP TO 3 LINES</span></h3>
+                </div>
+                <div class="card-body">
+                    <div class="odds-grid">
+                        <div class="odds-input">
+                            <label>LINE</label>
+                            <input type="number" id="line1" placeholder="173.5" step="0.5">
+                        </div>
+                        <div class="odds-input">
+                            <label class="over">OVER</label>
+                            <input type="number" id="over1" placeholder="1.85" step="0.01" value="1.85">
+                        </div>
+                        <div class="odds-input">
+                            <label class="under">UNDER</label>
+                            <input type="number" id="under1" placeholder="1.90" step="0.01" value="1.90">
+                        </div>
+                    </div>
+
+                    <div class="odds-grid">
+                        <div class="odds-input">
+                            <input type="number" id="line2" placeholder="174.5" step="0.5">
+                        </div>
+                        <div class="odds-input">
+                            <input type="number" id="over2" placeholder="1.95" step="0.01">
+                        </div>
+                        <div class="odds-input">
+                            <input type="number" id="under2" placeholder="1.75" step="0.01">
+                        </div>
+                    </div>
+
+                    <div class="odds-grid">
+                        <div class="odds-input">
+                            <input type="text" value="Optional" disabled>
+                        </div>
+                        <div class="odds-input">
+                            <input type="text" value="Optional" disabled>
+                        </div>
+                        <div class="odds-input">
+                            <input type="text" value="Optional" disabled>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2nd Half Odds Section -->
+            <section class="card">
+                <div class="card-header">
+                    <span class="card-icon">⚡</span>
+                    <h3>2ND HALF ODDS <span class="optional">OPTIONAL · STRONGEST SIGNAL</span></h3>
+                </div>
+                <div class="card-body">
+                    <div class="odds-grid">
+                        <div class="odds-input">
+                            <label>2H LINE</label>
+                            <input type="number" id="sh_line" placeholder="88.5" step="0.5">
+                        </div>
+                        <div class="odds-input">
+                            <label class="over">OVER</label>
+                            <input type="number" id="sh_over" placeholder="1.85" step="0.01" value="1.85">
+                        </div>
+                        <div class="odds-input">
+                            <label class="under">UNDER</label>
+                            <input type="number" id="sh_under" placeholder="1.90" step="0.01" value="1.90">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analysis Results (Hidden Initially) -->
+            <section class="card results-card" id="resultsSection" style="display: none;">
+                <div class="card-header">
+                    <span class="card-icon">🔍</span>
+                    <h3>ANALYSIS RESULTS</h3>
+                </div>
+                <div class="card-body" id="resultsContent">
+                    <!-- Results will be populated here -->
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn-analyze" id="analyzeBtn">
+                    <span class="btn-icon">⚡</span>
+                    ANALYZE & CALCULATE
+                </button>
+                <button class="btn-reset" id="resetBtn">Clear All & Reset</button>
+            </div>
+        </main>
+    </div>
+
+    <footer class="dashboard-footer">
+        <p class="footer-brand">👑 TRUELINEKING</p>
+        <p class="footer-disclaimer">For entertainment purposes only · V2.0 Premium</p>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
