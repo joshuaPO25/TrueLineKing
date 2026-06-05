@@ -1,0 +1,228 @@
+/* ========================================
+   LANDING PAGE STYLES - TrueLineKing
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Basketball Animation Container */
+.basketball-container {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.basketball {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 35% 35%, #ff9500, #ff6b00);
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(255, 165, 0, 0.8);
+    position: relative;
+    animation: bounce 3s ease-in-out;
+}
+
+/* Basketball seams */
+.basketball::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #000;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.basketball::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-300px);
+        opacity: 1;
+    }
+    15% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-80px);
+    }
+    35% {
+        transform: translateY(0);
+    }
+    45% {
+        transform: translateY(-50px);
+    }
+    60% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+/* Content Section */
+.content {
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.subtitle {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #888;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.description {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #aaa;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* Enter Button */
+.enter-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #000;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+.enter-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+}
+
+.enter-btn:active {
+    transform: translateY(-1px);
+}
+
+.play-icon {
+    font-size: 20px;
+}
+
+.btn-text {
+    letter-spacing: 2px;
+}
+
+/* Version */
+.version {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 48px;
+    }
+
+    .subtitle,
+    .description {
+        font-size: 12px;
+    }
+
+    .enter-btn {
+        padding: 14px 30px;
+        font-size: 14px;
+    }
+
+    .basketball {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .enter-btn {
+        padding: 12px 24px;
+        font-size: 12px;
+    }
+}
